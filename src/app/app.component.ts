@@ -10,11 +10,7 @@ declare var $: any;
 export class AppComponent {
   title = 'ECommerceClient';
 
-  constructor(private toastrService: CustomToastrService) {
-    toastrService.message("Merhaba", "Kıvanç", { messageType: ToastrMessageType.Info, position: ToastrPosition.TopCenter });
-    toastrService.message("Merhaba", "Kıvanç", { messageType: ToastrMessageType.Success, position: ToastrPosition.BottomFullWidth });
-    toastrService.message("Merhaba", "Kıvanç", { messageType: ToastrMessageType.Error, position: ToastrPosition.TopLeft });
-    toastrService.message("Merhaba", "Kıvanç", { messageType: ToastrMessageType.Warning, position: ToastrPosition.TopRight });
+  constructor() {
     
   }
 }
