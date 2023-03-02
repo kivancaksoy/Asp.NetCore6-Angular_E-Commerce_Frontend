@@ -7,7 +7,10 @@
     "forceConsistentCasingInFileNames": true,
     "strict": false,
     "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
+
+    //roperty 'adSoyad' comes from an index signature, so it must be accessed with ['adSoyad']. 
+    //hatası için aşağıdaki false  olarak setlendi.
+    "noPropertyAccessFromIndexSignature": false,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
