@@ -60,7 +60,14 @@ const routes: Routes = [
       import('./ui/components/register/register.module').then(
         (module) => module.RegisterModule
       ),
-  }
+  },
+  {
+    path: 'login',
+    loadChildren: () =>
+      import('./ui/components/login/login.module').then(
+        (module) => module.LoginModule
+      ),
+  },
 ];
 
 @NgModule({
