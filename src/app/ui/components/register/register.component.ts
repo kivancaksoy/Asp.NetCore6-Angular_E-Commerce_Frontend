@@ -21,7 +21,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
     this.frm = this.formBuilder.group(
       {
-        adSoyad: [
+        nameSurname: [
           '',
           [
             Validators.required,
@@ -29,7 +29,7 @@ export class RegisterComponent implements OnInit {
             Validators.minLength(3),
           ],
         ],
-        kullaniciAdi: [
+        username: [
           '',
           [
             Validators.required,
@@ -41,13 +41,13 @@ export class RegisterComponent implements OnInit {
           '',
           [Validators.required, Validators.maxLength(250), Validators.email],
         ],
-        sifre: ['', [Validators.required]],
-        sifreTekrar: ['', [Validators.required]],
+        password: ['', [Validators.required]],
+        passwordConfirm: ['', [Validators.required]],
       },
       {
         validators: (group: AbstractControl): ValidationErrors | null => {
-          let sifre = group.get('sifre').value;
-          let sifreTekrar = group.get('sifreTekrar').value;
+          let sifre = group.get('password').value;
+          let sifreTekrar = group.get('passwordConfirm').value;
           return sifre == sifreTekrar ? null : { notSame: true };
         },
       }
