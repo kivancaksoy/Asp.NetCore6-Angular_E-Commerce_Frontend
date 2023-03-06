@@ -49,6 +49,7 @@ export class CreateComponent extends BaseComponent {
         this.createdProduct.emit(create_product);
       },
       (errorMessage) => {
+        this.hideSpinner(SpinnerType.BallAtom);
         this.alertify.message(errorMessage, {
           dismissOthers: true,
           messageType: MessageType.Error,
