@@ -15,6 +15,7 @@ import {
   GoogleLoginProvider,
   SocialLoginModule,
   SocialAuthServiceConfig,
+  FacebookLoginProvider,
 } from '@abacritt/angularx-social-login';
 
 @NgModule({
@@ -49,6 +50,10 @@ import {
               '1092697985358-qsm3nie176mmnpjkl2m4bvue0k621bq3.apps.googleusercontent.com'
             ),
           },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider("538573035079518")
+          }
         ],
         onError: (err) => console.log(err),
       } as SocialAuthServiceConfig,

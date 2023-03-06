@@ -14,7 +14,8 @@
         </div>
 
         <asl-google-signin-button></asl-google-signin-button>
-
+        <img src="../../../../assets/facebook.png" style="width: 32px; height: 32px; cursor: pointer;" (click)="facebookLogin()">
+        <br>
         <button type="submit" style="margin-top: 5px;" class="btn btn-primary"
             (click)="login(txtUsernameOrEmail.value, txtPassword.value)">Giriş Yap</button>
 
