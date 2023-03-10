@@ -26,7 +26,6 @@ export class HttpErrorHandlerInterceptorService implements HttpInterceptor {
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    console.log('interccepter devreye girdi.');
     return next.handle(req).pipe(
       catchError((error) => {
         switch (error.status) {
