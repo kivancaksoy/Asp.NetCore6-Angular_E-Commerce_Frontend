@@ -21,7 +21,7 @@ import { MatCardModule } from '@angular/material/card';
     MatDialogModule,
     MatButtonModule,
     FileUploadModule,
-    MatCardModule
+    MatCardModule,
   ]
 })
 export class DialogModule { }
