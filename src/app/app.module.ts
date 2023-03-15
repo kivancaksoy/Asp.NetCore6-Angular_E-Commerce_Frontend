@@ -18,6 +18,7 @@ import {
   FacebookLoginProvider,
 } from '@abacritt/angularx-social-login';
 import { HttpErrorHandlerInterceptorService } from './services/common/http-error-handler-interceptor.service';
+import { BasketsModule } from './ui/components/baskets/baskets.module';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent],
@@ -36,7 +37,7 @@ import { HttpErrorHandlerInterceptorService } from './services/common/http-error
         allowedDomains: ['localhost:7029'],
       },
     }),
-    SocialLoginModule,
+    SocialLoginModule
   ],
   providers: [
     { provide: 'baseUrl', useValue: 'https://localhost:7029/api', multi: true },
