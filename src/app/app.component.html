@@ -20,16 +20,20 @@
               <a class="nav-link active" aria-current="page" routerLink="basket">Sepet</a>
             </li> -->
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" routerLink="register" *ngIf="!authService.isAuthenticated">Kayıt Ol</a>
+              <a class="nav-link active" aria-current="page" routerLink="register"
+                *ngIf="!authService.isAuthenticated">Kayıt Ol</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" routerLink="login" *ngIf="!authService.isAuthenticated">Giriş Yap</a>
+              <a class="nav-link active" aria-current="page" routerLink="login"
+                *ngIf="!authService.isAuthenticated">Giriş Yap</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" style="color: red; cursor: pointer;" (click)="signOut()" *ngIf="authService.isAuthenticated">Çıkış Yap</a>
+              <a class="nav-link active" aria-current="page" style="color: red; cursor: pointer;" (click)="signOut()"
+                *ngIf="authService.isAuthenticated">Çıkış Yap</a>
             </li>
             <li>
-              <a routerLink="admin" class="btn btn-outline-success" type="submit" *ngIf="authService.isAuthenticated">Yönetim Paneli</a>
+              <a routerLink="admin" class="btn btn-outline-success" type="submit"
+                *ngIf="authService.isAuthenticated">Yönetim Paneli</a>
             </li>
             <!-- <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -54,7 +58,8 @@
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form> -->
           <div class="d-flex">
-            <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal" type="submit">Sepet</button>
+            <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal"
+              (click)="loadComponent()" type="submit">Sepet</button>
           </div>
         </div>
       </div>
@@ -72,4 +77,11 @@
 <ngx-spinner type="ball-scale-multiple" name="s2" size="default"></ngx-spinner>
 <ngx-spinner type="ball-spin-clockwise-fade-rotating" name="s3" size="default"></ngx-spinner>
 
-<app-baskets></app-baskets>
+<!-- <app-baskets></app-baskets> -->
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <ng-template appDynamicLoadComponent></ng-template>
+  </div>
+</div>
