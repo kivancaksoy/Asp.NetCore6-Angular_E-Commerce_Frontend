@@ -22,12 +22,13 @@ export class DashboardComponent extends BaseComponent implements OnInit {
     private signalRService: SignalRService
   ) {
     super(spinner);
-    //signalRService.start(HubUrls.ProductHub);
-    signalRService.start(HubUrls.OrderHub);
+    // signalRService.start(HubUrls.ProductHub);
+    // signalRService.start(HubUrls.OrderHub);
   }
 
   ngOnInit(): void {
     this.signalRService.on(
+      HubUrls.ProductHub,
       ReceiveFunctions.ProductAddedMessageReceiveFunction,
       (message) => {
         this.alertify.message(message, {
@@ -38,6 +39,7 @@ export class DashboardComponent extends BaseComponent implements OnInit {
     );
 
     this.signalRService.on(
+      HubUrls.OrderHub,
       ReceiveFunctions.OrderAddedMessageReceiveFunction,
       (message) => {
         this.alertify.message(message, {

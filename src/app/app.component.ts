@@ -1,6 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
 import { DynamicLoadComponentDirective } from './directives/common/dynamic-load-component.directive';
 import { AuthService } from './services/common/auth.service';
 import {
