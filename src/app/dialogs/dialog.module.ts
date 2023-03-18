@@ -8,6 +8,9 @@ import { FileUploadModule } from '../services/common/file-upload/file-upload.mod
 import { MatCardModule } from '@angular/material/card';
 import { BasketItemRemoveDialogComponent } from './basket-item-remove-dialog/basket-item-remove-dialog.component';
 import { ShoppingCompleteDialogComponent } from './shopping-complete-dialog/shopping-complete-dialog.component';
+import { OrderDetailDialogComponent } from './order-detail-dialog/order-detail-dialog.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 
@@ -17,7 +20,8 @@ import { ShoppingCompleteDialogComponent } from './shopping-complete-dialog/shop
     DeleteDialogComponent,
     SelectProductImageDialogComponent,
     BasketItemRemoveDialogComponent,
-    ShoppingCompleteDialogComponent
+    ShoppingCompleteDialogComponent,
+    OrderDetailDialogComponent
 
   ],
   imports: [
@@ -26,6 +30,8 @@ import { ShoppingCompleteDialogComponent } from './shopping-complete-dialog/shop
     MatButtonModule,
     FileUploadModule,
     MatCardModule,
+    MatTableModule,
+    MatToolbarModule
   ]
 })
 export class DialogModule { }
