@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { firstValueFrom, Observable } from 'rxjs';
+import { first, firstValueFrom, observable, Observable } from 'rxjs';
 import { Create_Order } from 'src/app/contracts/order/create-order';
 import { List_Order } from 'src/app/contracts/order/list-order';
 import { SingleOrder } from 'src/app/contracts/order/single-order';
@@ -46,17 +46,29 @@ export class OrderService {
     successCallBack?: () => void,
     errorCallBack?: (errorMessage: string) => void
   ) {
-    const observable: Observable<SingleOrder> = this.httpClientService.get<SingleOrder>(
-      {
-        controller: 'orders',
-      },
-      id
-    );
+    const observable: Observable<SingleOrder> =
+      this.httpClientService.get<SingleOrder>(
+        {
+          controller: 'orders',
+        },
+        id
+      );
 
     const promiseData = firstValueFrom(observable);
     promiseData
       .then((value) => successCallBack())
       .catch((error) => errorCallBack(error));
     return await promiseData;
+  }
+
+  async completeOrder(id: string) {
+    const observable: Observable<any> = this.httpClientService.get(
+      {
+        controller: 'orders',
+        action: 'complete-order',
+      },
+      id
+    );
+    await firstValueFrom(observable);
   }
 }

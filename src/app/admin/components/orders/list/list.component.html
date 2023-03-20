@@ -19,6 +19,23 @@
       <th mat-header-cell *matHeaderCellDef>Created Date</th>
       <td mat-cell *matCellDef="let element">{{ element.createdDate }}</td>
     </ng-container>
+    <ng-container matColumnDef="completed">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        width="30"
+        style="padding: 0 5px 0 5px"
+      ></th>
+      <td mat-cell *matCellDef="let element" style="padding: 0 5px 0 5px">
+        <img
+          *ngIf="element.completed"
+          style="cursor: pointer"
+          src="../../../../../assets/completed.png"
+          width="25"
+          height="25"
+        />
+      </td>
+    </ng-container>
 
     <ng-container matColumnDef="viewdetail">
       <th
