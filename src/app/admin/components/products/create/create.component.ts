@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { FileUploadOptions } from 'src/app/services/common/file-upload/file-upload.component';
 import { BaseComponent, SpinnerType } from '../../../../base/base.component';
 import { Create_Product } from '../../../../contracts/create_product';
 import {

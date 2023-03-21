@@ -76,11 +76,16 @@ export class DeleteDirective {
                 700,
                 () => {
                   this.callback.emit();
-                  this.alertifyService.message('Ürün başarıyla silinmiştir.', {
-                    dismissOthers: true,
-                    messageType: MessageType.Success,
-                    position: Position.TopRight,
-                  });
+                  this.alertifyService.message(
+                    `${
+                      this.controller == 'roles' ? 'Role' : 'Ürün'
+                    } başarıyla silinmiştir.`,
+                    {
+                      dismissOthers: true,
+                      messageType: MessageType.Success,
+                      position: Position.TopRight,
+                    }
+                  );
                 }
               );
             },
@@ -96,9 +101,7 @@ export class DeleteDirective {
               );
             },
           });
-      }
+      },
     });
   }
-
-  
 }

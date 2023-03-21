@@ -1,0 +1,8 @@
+<mat-form-field appearance="fill" class="role-create">
+  <mat-label>Name</mat-label>
+  <input matInput #txtName />
+</mat-form-field>
+
+<button mat-raised-button color="primary" class="btn" (click)="create(txtName)">
+  Create Role
+</button>
