@@ -12,9 +12,8 @@ import { OrderDetailDialogComponent } from './order-detail-dialog/order-detail-d
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { CompleteOrderDialogComponent } from './complete-order-dialog/complete-order-dialog.component';
-
-
-
+import { AuthorizeMenuDialogComponent } from './authorize-menu-dialog/authorize-menu-dialog.component';
+import { MatBadgeModule } from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -23,8 +22,8 @@ import { CompleteOrderDialogComponent } from './complete-order-dialog/complete-o
     BasketItemRemoveDialogComponent,
     ShoppingCompleteDialogComponent,
     OrderDetailDialogComponent,
-    CompleteOrderDialogComponent
-
+    CompleteOrderDialogComponent,
+    AuthorizeMenuDialogComponent,
   ],
   imports: [
     CommonModule,
@@ -33,7 +32,8 @@ import { CompleteOrderDialogComponent } from './complete-order-dialog/complete-o
     FileUploadModule,
     MatCardModule,
     MatTableModule,
-    MatToolbarModule
-  ]
+    MatToolbarModule,
+    MatBadgeModule,
+  ],
 })
-export class DialogModule { }
+export class DialogModule {}
