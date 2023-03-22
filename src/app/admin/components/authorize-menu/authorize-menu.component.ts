@@ -20,6 +20,7 @@ interface ITreeMenu {
   name?: string;
   actions?: ITreeMenu[];
   code?: string;
+  menuName?: string;
 }
 
 @Component({
@@ -45,6 +46,7 @@ export class AuthorizeMenuComponent extends BaseComponent implements OnInit {
           const _treeMenu: ITreeMenu = {
             name: a.definition,
             code: a.code,
+            menuName: m.name
           };
           return _treeMenu;
         }),
@@ -65,6 +67,7 @@ export class AuthorizeMenuComponent extends BaseComponent implements OnInit {
         name: menu.name,
         level: level,
         code: menu.code,
+        menuName: menu.menuName
       };
     },
     (menu) => menu.level,
@@ -76,10 +79,10 @@ export class AuthorizeMenuComponent extends BaseComponent implements OnInit {
 
   hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
 
-  assignRole(code: string, name: string) {
+  assignRole(code: string, name: string, menuName: string) {
     this.dialogService.openDialog({
       componentType: AuthorizeMenuDialogComponent,
-      data: {code: code, name: name},
+      data: {code: code, name: name, menuName: menuName},
       options: {
         width: '750px',
       },

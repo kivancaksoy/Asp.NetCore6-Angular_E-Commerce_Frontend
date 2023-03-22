@@ -40,4 +40,5 @@ export class RoleService {
 
     return (await promiseData) as { succeeded: boolean };
   }
+
 }
