@@ -63,7 +63,16 @@ export class HttpErrorHandlerInterceptorService implements HttpInterceptor {
                   }
                 }
               )
-              .then((data) => {});
+              .then((data) => {
+                this.toastrService.message(
+                  'Bu işlemi yapmaya yetkiniz bulunmamaktadır!',
+                  'Yetkisiz İşlem!',
+                  {
+                    messageType: ToastrMessageType.Warning,
+                    position: ToastrPosition.BottomFullWidth,
+                  }
+                );
+              });
 
             break;
           case HttpStatusCode.InternalServerError:
