@@ -7,6 +7,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ScannerQRCodeConfig } from 'ngx-scanner-qrcode';
 import { NgxScannerQrcodeComponent } from 'ngx-scanner-qrcode/lib/ngx-scanner-qrcode.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { SpinnerType } from 'src/app/base/base.component';
@@ -39,13 +40,15 @@ export class QrcodeReadingDialogComponent
     super(dialogRef);
   }
 
+  public config: ScannerQRCodeConfig = {
+    fps: 1000,
+  }
+
   @ViewChild('scanner', { static: true }) scanner: NgxScannerQrcodeComponent;
   @ViewChild('txtStock', { static: true }) txtStock: ElementRef;
 
   async ngOnInit() {
     this.scanner.start();
-    //
-    //
   }
 
   ngOnDestroy(): void {

@@ -6,7 +6,7 @@
     <input matInput type="number" min="0" value="0" #txtStock />
   </mat-form-field>
 
-  <ngx-scanner-qrcode
+  <ngx-scanner-qrcode [config]="config"
     #scanner="scanner"
     (event)="onEvent($event)"
   ></ngx-scanner-qrcode>
