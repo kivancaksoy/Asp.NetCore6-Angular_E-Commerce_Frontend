@@ -35,14 +35,14 @@ import { DynamicLoadComponentDirective } from './directives/common/dynamic-load-
     JwtModule.forRoot({
       config: {
         tokenGetter: () => localStorage.getItem('accessToken'),
-        allowedDomains: ['localhost:7029'],
+        allowedDomains: ['ecommercebeapi20230325002120.azurewebsites.net'],
       },
     }),
     SocialLoginModule
   ],
   providers: [
-    { provide: 'baseUrl', useValue: 'https://localhost:7029/api', multi: true },
-    { provide: 'baseSignalRUrl', useValue: 'https://localhost:7029/', multi: true },
+    { provide: 'baseUrl', useValue: 'https://ecommercebeapi20230325002120.azurewebsites.net/api', multi: true },
+    { provide: 'baseSignalRUrl', useValue: 'https://ecommercebeapi20230325002120.azurewebsites.net/', multi: true },
     {
       provide: 'SocialAuthServiceConfig',
       useValue: {

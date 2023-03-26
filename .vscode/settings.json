@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/cb95aabc-9e39-48b2-aa5d-595f3fb9a683/resourceGroups/MiniECommerceGroup/providers/Microsoft.Web/sites/miniecommerceangular",
+    "appService.deploySubpath": "dist"
+}
